@@ -72,7 +72,10 @@ noremap ? :set hlsearch<cr>?
 noremap * :set hlsearch<cr>*
 
 " Colorscheme
-set background=dark
+"let g:molokai_original = 1
+"let g:rehash256 = 1
+"colorscheme monokai
+"set background=dark
 colorscheme gruvbox
 "set guifont=Consolas:h12    " Set font and font size.
 
