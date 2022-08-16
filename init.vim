@@ -32,6 +32,8 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Octave
 "Plug 'jvirtanen/vim-octave'
+" Jupyter-vim
+Plug 'jupyter-vim/jupyter-vim'
 
 " Initialize plugin system
 call plug#end()
@@ -103,31 +105,6 @@ if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 " >>> Restore last position <<<
-
-" >>> Vim-LaTeX Settings <<<
-" Viewer options: One may configure the viewer either by specifying a built-in
-" viewer method:
-let g:tex_flavor='latex'
-let g:vimtex_view_method = 'zathura'
-let g:vimtex_quickfix_mode=0
-set conceallevel=1
-let g:tex_conceal='abdmg'
-" Enable pdflatex --shell-escape option to use minted package
-let g:vimtex_compiler_latexmk = {
-    \ 'build_dir' : '',
-    \ 'callback' : 1,
-    \ 'continuous' : 1,
-    \ 'executable' : 'latexmk',
-    \ 'hooks' : [],
-    \ 'options' : [
-    \   '-verbose',
-    \   '-shell-escape',
-    \   '-file-line-error',
-    \   '-synctex=1',
-    \   '-interaction=nonstopmode',
-    \ ],
-    \}
-" >>> Vim-LaTeX Settings <<<
 
 " >>> NvimTree Settings <<<
 lua require'nvim-tree'.setup{}
@@ -253,6 +230,31 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 " >>> TreeSitter Settings <<<
+
+" >>> Vim-LaTeX Settings <<<
+" Viewer options: One may configure the viewer either by specifying a built-in
+" viewer method:
+let g:tex_flavor='latex'
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+" Enable pdflatex --shell-escape option to use minted package
+let g:vimtex_compiler_latexmk = {
+    \ 'build_dir' : '',
+    \ 'callback' : 1,
+    \ 'continuous' : 1,
+    \ 'executable' : 'latexmk',
+    \ 'hooks' : [],
+    \ 'options' : [
+    \   '-verbose',
+    \   '-shell-escape',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
+" >>> Vim-LaTeX Settings <<<
 
 " >>> Coc Configuration <<<
 " Give more space for displaying messages.
