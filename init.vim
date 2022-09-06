@@ -34,6 +34,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'jvirtanen/vim-octave'
 " Jupyter-vim
 Plug 'jupyter-vim/jupyter-vim'
+" Verilog
+Plug 'vhda/verilog_systemverilog.vim'
 
 " Initialize plugin system
 call plug#end()
